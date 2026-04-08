@@ -83,4 +83,42 @@ describe("registerBackground", () => {
     const ignoredResponse = onMessage.listeners[0]({ type: "unknown" });
     assert.strictEqual(ignoredResponse, undefined);
   });
+
+  test("catches startup seedSnapshots failures to avoid unhandled rejections", async () => {
+    const onCreated = createEventRecorder();
+    const onUpdated = createEventRecorder();
+    const onRemoved = createEventRecorder();
+    const onMessage = createEventRecorder();
+    const error = new Error("seed failed");
+    const originalConsoleError = console.error;
+    const consoleErrors = [];
+    console.error = (...args) => {
+      consoleErrors.push(args);
+    };
+
+    try {
+      registerBackground({
+        browserApi: {
+          tabs: { onCreated, onUpdated, onRemoved },
+          runtime: { onMessage },
+        },
+        controller: {
+          seedSnapshots() {
+            return Promise.reject(error);
+          },
+          upsertTabSnapshot() {},
+          async recordClosedTab() {},
+          async listClosedTabs() {
+            return [];
+          },
+          async reopenClosedTab() {},
+        },
+      });
+
+      await new Promise((resolve) => setTimeout(resolve, 0));
+      assert.deepStrictEqual(consoleErrors, [["Failed to seed tab snapshots", error]]);
+    } finally {
+      console.error = originalConsoleError;
+    }
+  });
 });

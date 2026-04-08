@@ -1,5 +1,7 @@
 export const registerBackground = ({ browserApi, controller }) => {
-  controller.seedSnapshots();
+  Promise.resolve(controller.seedSnapshots()).catch((error) => {
+    console.error("Failed to seed tab snapshots", error);
+  });
 
   browserApi.tabs.onCreated.addListener((tab) => {
     controller.upsertTabSnapshot(tab);
