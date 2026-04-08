@@ -151,6 +151,49 @@ describe("closed tabs controller", () => {
     assert.strictEqual(fixture.setCalls.length, 0);
   });
 
+  test("recordClosedTab ignores stale snapshot after tab becomes non-recordable", async () => {
+    const fixture = createBrowserFixture();
+    const controller = createClosedTabsController({
+      browserApi: fixture.browserApi,
+      now: () => 300,
+      createId: () => "stale",
+    });
+
+    controller.upsertTabSnapshot({
+      id: 9,
+      windowId: 1,
+      url: "https://example.com/live",
+      title: "Live",
+      favIconUrl: "",
+      incognito: false,
+    });
+    controller.upsertTabSnapshot({
+      id: 9,
+      windowId: 1,
+      url: "about:blank",
+      title: "Now unsupported",
+      favIconUrl: "",
+      incognito: false,
+    });
+
+    await controller.recordClosedTab(9);
+
+    assert.strictEqual(fixture.setCalls.length, 0);
+  });
+
+  test("recordClosedTab is a no-op when no snapshot exists", async () => {
+    const fixture = createBrowserFixture();
+    const controller = createClosedTabsController({
+      browserApi: fixture.browserApi,
+      now: () => 301,
+      createId: () => "unused",
+    });
+
+    await controller.recordClosedTab(999);
+
+    assert.strictEqual(fixture.setCalls.length, 0);
+  });
+
   test("reopenClosedTab opens the stored URL and removes the record", async () => {
     const fixture = createBrowserFixture({
       records: [

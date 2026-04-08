@@ -20,6 +20,7 @@ export const createClosedTabsController = ({
     }
 
     if (tab?.incognito || !isRecordableUrl(tab?.url)) {
+      snapshots.delete(tabId);
       return;
     }
 
