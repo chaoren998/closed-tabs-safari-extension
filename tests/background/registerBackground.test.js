@@ -66,6 +66,9 @@ describe("registerBackground", () => {
       { id: 11, url: "https://example.com/update", title: "Update" },
     ]);
 
+    onUpdated.listeners[0](12, {}, undefined);
+    assert.deepStrictEqual(calls.at(-1), ["upsertTabSnapshot", { id: 12 }]);
+
     await onRemoved.listeners[0](13);
     assert.deepStrictEqual(calls.at(-1), ["recordClosedTab", 13]);
 
@@ -117,6 +120,45 @@ describe("registerBackground", () => {
 
       await new Promise((resolve) => setTimeout(resolve, 0));
       assert.deepStrictEqual(consoleErrors, [["Failed to seed tab snapshots", error]]);
+    } finally {
+      console.error = originalConsoleError;
+    }
+  });
+
+  test("catches recordClosedTab failures from onRemoved to avoid unhandled rejections", async () => {
+    const onCreated = createEventRecorder();
+    const onUpdated = createEventRecorder();
+    const onRemoved = createEventRecorder();
+    const onMessage = createEventRecorder();
+    const error = new Error("record failed");
+    const originalConsoleError = console.error;
+    const consoleErrors = [];
+    console.error = (...args) => {
+      consoleErrors.push(args);
+    };
+
+    try {
+      registerBackground({
+        browserApi: {
+          tabs: { onCreated, onUpdated, onRemoved },
+          runtime: { onMessage },
+        },
+        controller: {
+          async seedSnapshots() {},
+          upsertTabSnapshot() {},
+          recordClosedTab() {
+            return Promise.reject(error);
+          },
+          async listClosedTabs() {
+            return [];
+          },
+          async reopenClosedTab() {},
+        },
+      });
+
+      onRemoved.listeners[0](101);
+      await new Promise((resolve) => setTimeout(resolve, 0));
+      assert.deepStrictEqual(consoleErrors, [["Failed to record closed tab", error]]);
     } finally {
       console.error = originalConsoleError;
     }

@@ -6,10 +6,72 @@ import {
 
 const STORAGE_KEY = "closedTabs";
 
+const isFiniteNumber = (value) => typeof value === "number" && Number.isFinite(value);
+
+const defaultCreateId = () => {
+  const cryptoObj = globalThis?.crypto;
+  if (typeof cryptoObj?.randomUUID === "function") {
+    return cryptoObj.randomUUID();
+  }
+
+  // Small, robust fallback for environments without crypto.randomUUID().
+  // Prefer getRandomValues when available, otherwise fall back to Math.random().
+  if (typeof cryptoObj?.getRandomValues === "function") {
+    const bytes = new Uint8Array(16);
+    cryptoObj.getRandomValues(bytes);
+    const hex = Array.from(bytes, (byte) => byte.toString(16).padStart(2, "0")).join("");
+    return `ct_${hex}`;
+  }
+
+  return `ct_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 10)}`;
+};
+
+const sanitizeClosedTabRecords = (value) => {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+
+  const sanitized = [];
+  for (const item of value) {
+    if (!item || typeof item !== "object") {
+      continue;
+    }
+
+    const { id, url, closedAt } = item;
+    if (typeof id !== "string") {
+      continue;
+    }
+    if (typeof url !== "string" || !isRecordableUrl(url)) {
+      continue;
+    }
+    if (!isFiniteNumber(closedAt)) {
+      continue;
+    }
+
+    const next = { id, url, closedAt };
+    if (typeof item.title === "string") {
+      next.title = item.title;
+    }
+    if (typeof item.favIconUrl === "string") {
+      next.favIconUrl = item.favIconUrl;
+    }
+    if (isFiniteNumber(item.sourceTabId)) {
+      next.sourceTabId = item.sourceTabId;
+    }
+    if (isFiniteNumber(item.sourceWindowId)) {
+      next.sourceWindowId = item.sourceWindowId;
+    }
+
+    sanitized.push(next);
+  }
+
+  return sanitized;
+};
+
 export const createClosedTabsController = ({
   browserApi,
   now = () => Date.now(),
-  createId = () => crypto.randomUUID(),
+  createId = defaultCreateId,
 }) => {
   const snapshots = new Map();
 
@@ -44,7 +106,7 @@ export const createClosedTabsController = ({
 
   const listClosedTabs = async () => {
     const stored = await browserApi.storage.local.get(STORAGE_KEY);
-    return stored[STORAGE_KEY] ?? [];
+    return sanitizeClosedTabRecords(stored[STORAGE_KEY]);
   };
 
   const writeClosedTabs = async (records) => {

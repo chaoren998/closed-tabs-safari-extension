@@ -8,11 +8,13 @@ export const registerBackground = ({ browserApi, controller }) => {
   });
 
   browserApi.tabs.onUpdated.addListener((tabId, _changeInfo, tab) => {
-    controller.upsertTabSnapshot({ ...tab, id: tabId });
+    controller.upsertTabSnapshot({ ...(tab ?? {}), id: tabId });
   });
 
-  browserApi.tabs.onRemoved.addListener(async (tabId) => {
-    await controller.recordClosedTab(tabId);
+  browserApi.tabs.onRemoved.addListener((tabId) => {
+    Promise.resolve(controller.recordClosedTab(tabId)).catch((error) => {
+      console.error("Failed to record closed tab", error);
+    });
   });
 
   browserApi.runtime.onMessage.addListener((message) => {

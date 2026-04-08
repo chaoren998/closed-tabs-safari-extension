@@ -4,8 +4,9 @@ import { describe, test } from "node:test";
 import { createClosedTabsController } from "../../extension/src/background/closedTabsController.js";
 
 const STORAGE_KEY = "closedTabs";
+const NO_OVERRIDE = Symbol("no_override");
 
-const createBrowserFixture = ({ records = [], tabs = [] } = {}) => {
+const createBrowserFixture = ({ records = [], tabs = [], storedValue = NO_OVERRIDE } = {}) => {
   const setCalls = [];
   const createCalls = [];
   const queryCalls = [];
@@ -20,6 +21,9 @@ const createBrowserFixture = ({ records = [], tabs = [] } = {}) => {
         local: {
           async get(key) {
             assert.strictEqual(key, STORAGE_KEY);
+            if (storedValue !== NO_OVERRIDE) {
+              return { [STORAGE_KEY]: storedValue };
+            }
             return { [STORAGE_KEY]: [...storedRecords] };
           },
           async set(value) {
@@ -43,6 +47,76 @@ const createBrowserFixture = ({ records = [], tabs = [] } = {}) => {
 };
 
 describe("closed tabs controller", () => {
+  test("listClosedTabs returns [] for non-array storage values", async () => {
+    const cases = [
+      undefined,
+      null,
+      "not-an-array",
+      123,
+      true,
+      { id: "oops" },
+    ];
+
+    for (const storedValue of cases) {
+      const fixture = createBrowserFixture({ storedValue });
+      const controller = createClosedTabsController({ browserApi: fixture.browserApi });
+      // eslint-disable-next-line no-await-in-loop
+      const result = await controller.listClosedTabs();
+      assert.deepStrictEqual(result, []);
+    }
+  });
+
+  test("listClosedTabs filters malformed records and preserves optional fields", async () => {
+    const fixture = createBrowserFixture({
+      storedValue: [
+        null,
+        "nope",
+        {},
+        { id: 123, url: "https://bad-id.example", closedAt: 1 },
+        { id: "bad-url", url: "about:blank", closedAt: 1 },
+        { id: "bad-closedAt", url: "https://bad-closedAt.example", closedAt: NaN },
+        {
+          id: "ok-1",
+          url: "https://ok.example/one",
+          closedAt: 10,
+          title: "Title 1",
+          favIconUrl: "icon1.ico",
+          sourceTabId: 7,
+          sourceWindowId: 3,
+        },
+        {
+          id: "ok-2",
+          url: "https://ok.example/two",
+          closedAt: 20,
+          title: 123,
+          favIconUrl: null,
+          sourceTabId: "not-a-number",
+          sourceWindowId: undefined,
+        },
+      ],
+    });
+    const controller = createClosedTabsController({ browserApi: fixture.browserApi });
+
+    const result = await controller.listClosedTabs();
+
+    assert.deepStrictEqual(result, [
+      {
+        id: "ok-1",
+        url: "https://ok.example/one",
+        closedAt: 10,
+        title: "Title 1",
+        favIconUrl: "icon1.ico",
+        sourceTabId: 7,
+        sourceWindowId: 3,
+      },
+      {
+        id: "ok-2",
+        url: "https://ok.example/two",
+        closedAt: 20,
+      },
+    ]);
+  });
+
   test("recordClosedTab stores the last seen tab snapshot", async () => {
     const fixture = createBrowserFixture();
     const controller = createClosedTabsController({
