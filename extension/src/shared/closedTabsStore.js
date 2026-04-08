@@ -24,16 +24,11 @@ const ensureRecordableUrl = (record) => {
 export const insertClosedTabRecord = (existingRecords, nextRecord) => {
   ensureRecordableUrl(nextRecord);
 
-  const normalizedRecords = [...(existingRecords ?? []), nextRecord];
+  const normalizedRecords = [nextRecord, ...(existingRecords ?? [])];
   normalizedRecords.sort((a, b) => b.closedAt - a.closedAt);
 
   return normalizedRecords.slice(0, CLOSED_TABS_LIMIT);
 };
 
-export const removeClosedTabRecord = (existingRecords, recordId) => {
-  if (!existingRecords) {
-    return [];
-  }
-
-  return existingRecords.filter((record) => record.id !== recordId);
-};
+export const removeClosedTabRecord = (existingRecords, recordId) =>
+  existingRecords.filter((record) => record.id !== recordId);

@@ -11,12 +11,14 @@ describe("closed tab store", () => {
   test("newest record prepends", () => {
     const existing = [
       { id: "older", url: "https://example.com", closedAt: 1 },
+      { id: "tie", url: "https://example.com", closedAt: 2 },
     ];
     const nextRecord = { id: "newest", url: "https://example.com", closedAt: 2 };
 
     const updated = insertClosedTabRecord(existing, nextRecord);
 
-    assert.strictEqual(updated[0], nextRecord);
+    assert.strictEqual(updated[0].id, "newest");
+    assert.strictEqual(updated[1].id, "tie");
   });
 
   test("limit trims to closed tabs limit", () => {
