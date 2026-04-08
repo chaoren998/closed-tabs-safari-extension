@@ -1,0 +1,11 @@
+{
+  "name": "safari-closed-tabs-extension",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "test:store": "node --test tests/shared/closedTabsStore.test.js",
+    "test:background": "node --test tests/background/*.test.js",
+    "test:popup": "node --test tests/popup/*.test.js tests/shared/relativeTime.test.js"
+  }
+}
