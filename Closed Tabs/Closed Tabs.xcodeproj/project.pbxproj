@@ -1,0 +1,975 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D28DD17F2F865057002E99DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DD17E2F865057002E99DE /* AppDelegate.swift */; };
+		D28DD1812F865057002E99DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DD1802F865057002E99DE /* SceneDelegate.swift */; };
+		D28DD1842F865057002E99DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28DD1822F865057002E99DE /* LaunchScreen.storyboard */; };
+		D28DD1872F865057002E99DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28DD1852F865057002E99DE /* Main.storyboard */; };
+		D28DD1902F865057002E99DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DD18F2F865057002E99DE /* AppDelegate.swift */; };
+		D28DD1932F865057002E99DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28DD1912F865057002E99DE /* Main.storyboard */; };
+		D28DD19A2F865057002E99DE /* Closed Tabs Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D28DD1992F865057002E99DE /* Closed Tabs Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D28DD1A42F865057002E99DE /* Closed Tabs Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D28DD1A32F865057002E99DE /* Closed Tabs Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D28DD1A92F865057002E99DE /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = D28DD16E2F865057002E99DE /* Main.html */; };
+		D28DD1AA2F865057002E99DE /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = D28DD16E2F865057002E99DE /* Main.html */; };
+		D28DD1AB2F865057002E99DE /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D28DD1702F865057002E99DE /* Icon.png */; };
+		D28DD1AC2F865057002E99DE /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D28DD1702F865057002E99DE /* Icon.png */; };
+		D28DD1AD2F865057002E99DE /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = D28DD1712F865057002E99DE /* Style.css */; };
+		D28DD1AE2F865057002E99DE /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = D28DD1712F865057002E99DE /* Style.css */; };
+		D28DD1AF2F865057002E99DE /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = D28DD1722F865057002E99DE /* Script.js */; };
+		D28DD1B02F865057002E99DE /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = D28DD1722F865057002E99DE /* Script.js */; };
+		D28DD1B12F865057002E99DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DD1732F865057002E99DE /* ViewController.swift */; };
+		D28DD1B22F865057002E99DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DD1732F865057002E99DE /* ViewController.swift */; };
+		D28DD1B32F865057002E99DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D28DD1742F865057002E99DE /* Assets.xcassets */; };
+		D28DD1B42F865057002E99DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D28DD1742F865057002E99DE /* Assets.xcassets */; };
+		D28DD1B52F865057002E99DE /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DD1762F865057002E99DE /* SafariWebExtensionHandler.swift */; };
+		D28DD1B62F865057002E99DE /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DD1762F865057002E99DE /* SafariWebExtensionHandler.swift */; };
+		D28DD1CA2F865058002E99DE /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = D28DD1C82F865058002E99DE /* manifest.json */; };
+		D28DD1CB2F865058002E99DE /* src in Resources */ = {isa = PBXBuildFile; fileRef = D28DD1C92F865058002E99DE /* src */; };
+		D28DD1CC2F865058002E99DE /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = D28DD1C82F865058002E99DE /* manifest.json */; };
+		D28DD1CD2F865058002E99DE /* src in Resources */ = {isa = PBXBuildFile; fileRef = D28DD1C92F865058002E99DE /* src */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D28DD19B2F865057002E99DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D28DD1682F865057002E99DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D28DD1982F865057002E99DE;
+			remoteInfo = "Closed Tabs Extension (iOS)";
+		};
+		D28DD1A52F865057002E99DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D28DD1682F865057002E99DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D28DD1A22F865057002E99DE;
+			remoteInfo = "Closed Tabs Extension (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D28DD1BC2F865057002E99DE /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D28DD19A2F865057002E99DE /* Closed Tabs Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D28DD1C32F865057002E99DE /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D28DD1A42F865057002E99DE /* Closed Tabs Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D28DD16F2F865057002E99DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
+		D28DD1702F865057002E99DE /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		D28DD1712F865057002E99DE /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		D28DD1722F865057002E99DE /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		D28DD1732F865057002E99DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D28DD1742F865057002E99DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D28DD1762F865057002E99DE /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		D28DD17B2F865057002E99DE /* Closed Tabs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Closed Tabs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D28DD17E2F865057002E99DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D28DD1802F865057002E99DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D28DD1832F865057002E99DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D28DD1862F865057002E99DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D28DD1882F865057002E99DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D28DD18D2F865057002E99DE /* Closed Tabs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Closed Tabs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D28DD18F2F865057002E99DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D28DD1922F865057002E99DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D28DD1942F865057002E99DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D28DD1992F865057002E99DE /* Closed Tabs Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Closed Tabs Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D28DD19E2F865057002E99DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D28DD1A32F865057002E99DE /* Closed Tabs Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Closed Tabs Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D28DD1A82F865057002E99DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D28DD1C82F865058002E99DE /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../extension/manifest.json; sourceTree = "<group>"; };
+		D28DD1C92F865058002E99DE /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../../extension/src; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D28DD1782F865057002E99DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D28DD18A2F865057002E99DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D28DD1962F865057002E99DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D28DD1A02F865057002E99DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D28DD1672F865057002E99DE = {
+			isa = PBXGroup;
+			children = (
+				D28DD16C2F865057002E99DE /* Shared (App) */,
+				D28DD1752F865057002E99DE /* Shared (Extension) */,
+				D28DD17D2F865057002E99DE /* iOS (App) */,
+				D28DD18E2F865057002E99DE /* macOS (App) */,
+				D28DD19D2F865057002E99DE /* iOS (Extension) */,
+				D28DD1A72F865057002E99DE /* macOS (Extension) */,
+				D28DD17C2F865057002E99DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D28DD16C2F865057002E99DE /* Shared (App) */ = {
+			isa = PBXGroup;
+			children = (
+				D28DD1732F865057002E99DE /* ViewController.swift */,
+				D28DD1742F865057002E99DE /* Assets.xcassets */,
+				D28DD16D2F865057002E99DE /* Resources */,
+			);
+			path = "Shared (App)";
+			sourceTree = "<group>";
+		};
+		D28DD16D2F865057002E99DE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D28DD16E2F865057002E99DE /* Main.html */,
+				D28DD1702F865057002E99DE /* Icon.png */,
+				D28DD1712F865057002E99DE /* Style.css */,
+				D28DD1722F865057002E99DE /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D28DD1752F865057002E99DE /* Shared (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				D28DD1C72F865058002E99DE /* Resources */,
+				D28DD1762F865057002E99DE /* SafariWebExtensionHandler.swift */,
+			);
+			path = "Shared (Extension)";
+			sourceTree = "<group>";
+		};
+		D28DD17C2F865057002E99DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D28DD17B2F865057002E99DE /* Closed Tabs.app */,
+				D28DD18D2F865057002E99DE /* Closed Tabs.app */,
+				D28DD1992F865057002E99DE /* Closed Tabs Extension.appex */,
+				D28DD1A32F865057002E99DE /* Closed Tabs Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D28DD17D2F865057002E99DE /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				D28DD17E2F865057002E99DE /* AppDelegate.swift */,
+				D28DD1802F865057002E99DE /* SceneDelegate.swift */,
+				D28DD1822F865057002E99DE /* LaunchScreen.storyboard */,
+				D28DD1852F865057002E99DE /* Main.storyboard */,
+				D28DD1882F865057002E99DE /* Info.plist */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		D28DD18E2F865057002E99DE /* macOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				D28DD18F2F865057002E99DE /* AppDelegate.swift */,
+				D28DD1912F865057002E99DE /* Main.storyboard */,
+				D28DD1942F865057002E99DE /* Info.plist */,
+			);
+			path = "macOS (App)";
+			sourceTree = "<group>";
+		};
+		D28DD19D2F865057002E99DE /* iOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				D28DD19E2F865057002E99DE /* Info.plist */,
+			);
+			path = "iOS (Extension)";
+			sourceTree = "<group>";
+		};
+		D28DD1A72F865057002E99DE /* macOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				D28DD1A82F865057002E99DE /* Info.plist */,
+			);
+			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		D28DD1C72F865058002E99DE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D28DD1C82F865058002E99DE /* manifest.json */,
+				D28DD1C92F865058002E99DE /* src */,
+			);
+			name = Resources;
+			path = "Shared (Extension)";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D28DD17A2F865057002E99DE /* Closed Tabs (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D28DD1BD2F865057002E99DE /* Build configuration list for PBXNativeTarget "Closed Tabs (iOS)" */;
+			buildPhases = (
+				D28DD1772F865057002E99DE /* Sources */,
+				D28DD1782F865057002E99DE /* Frameworks */,
+				D28DD1792F865057002E99DE /* Resources */,
+				D28DD1BC2F865057002E99DE /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D28DD19C2F865057002E99DE /* PBXTargetDependency */,
+			);
+			name = "Closed Tabs (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "Closed Tabs (iOS)";
+			productReference = D28DD17B2F865057002E99DE /* Closed Tabs.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D28DD18C2F865057002E99DE /* Closed Tabs (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D28DD1C42F865057002E99DE /* Build configuration list for PBXNativeTarget "Closed Tabs (macOS)" */;
+			buildPhases = (
+				D28DD1892F865057002E99DE /* Sources */,
+				D28DD18A2F865057002E99DE /* Frameworks */,
+				D28DD18B2F865057002E99DE /* Resources */,
+				D28DD1C32F865057002E99DE /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D28DD1A62F865057002E99DE /* PBXTargetDependency */,
+			);
+			name = "Closed Tabs (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "Closed Tabs (macOS)";
+			productReference = D28DD18D2F865057002E99DE /* Closed Tabs.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D28DD1982F865057002E99DE /* Closed Tabs Extension (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D28DD1B92F865057002E99DE /* Build configuration list for PBXNativeTarget "Closed Tabs Extension (iOS)" */;
+			buildPhases = (
+				D28DD1952F865057002E99DE /* Sources */,
+				D28DD1962F865057002E99DE /* Frameworks */,
+				D28DD1972F865057002E99DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Closed Tabs Extension (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "Closed Tabs Extension (iOS)";
+			productReference = D28DD1992F865057002E99DE /* Closed Tabs Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		D28DD1A22F865057002E99DE /* Closed Tabs Extension (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D28DD1C02F865057002E99DE /* Build configuration list for PBXNativeTarget "Closed Tabs Extension (macOS)" */;
+			buildPhases = (
+				D28DD19F2F865057002E99DE /* Sources */,
+				D28DD1A02F865057002E99DE /* Frameworks */,
+				D28DD1A12F865057002E99DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Closed Tabs Extension (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "Closed Tabs Extension (macOS)";
+			productReference = D28DD1A32F865057002E99DE /* Closed Tabs Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D28DD1682F865057002E99DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2640;
+				LastUpgradeCheck = 2640;
+				TargetAttributes = {
+					D28DD17A2F865057002E99DE = {
+						CreatedOnToolsVersion = 26.4;
+					};
+					D28DD18C2F865057002E99DE = {
+						CreatedOnToolsVersion = 26.4;
+					};
+					D28DD1982F865057002E99DE = {
+						CreatedOnToolsVersion = 26.4;
+					};
+					D28DD1A22F865057002E99DE = {
+						CreatedOnToolsVersion = 26.4;
+					};
+				};
+			};
+			buildConfigurationList = D28DD16B2F865057002E99DE /* Build configuration list for PBXProject "Closed Tabs" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D28DD1672F865057002E99DE;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D28DD17C2F865057002E99DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D28DD17A2F865057002E99DE /* Closed Tabs (iOS) */,
+				D28DD18C2F865057002E99DE /* Closed Tabs (macOS) */,
+				D28DD1982F865057002E99DE /* Closed Tabs Extension (iOS) */,
+				D28DD1A22F865057002E99DE /* Closed Tabs Extension (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D28DD1792F865057002E99DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D28DD1AB2F865057002E99DE /* Icon.png in Resources */,
+				D28DD1842F865057002E99DE /* LaunchScreen.storyboard in Resources */,
+				D28DD1A92F865057002E99DE /* Main.html in Resources */,
+				D28DD1AF2F865057002E99DE /* Script.js in Resources */,
+				D28DD1B32F865057002E99DE /* Assets.xcassets in Resources */,
+				D28DD1872F865057002E99DE /* Main.storyboard in Resources */,
+				D28DD1AD2F865057002E99DE /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D28DD18B2F865057002E99DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D28DD1AC2F865057002E99DE /* Icon.png in Resources */,
+				D28DD1AE2F865057002E99DE /* Style.css in Resources */,
+				D28DD1932F865057002E99DE /* Main.storyboard in Resources */,
+				D28DD1B02F865057002E99DE /* Script.js in Resources */,
+				D28DD1B42F865057002E99DE /* Assets.xcassets in Resources */,
+				D28DD1AA2F865057002E99DE /* Main.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D28DD1972F865057002E99DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D28DD1CC2F865058002E99DE /* manifest.json in Resources */,
+				D28DD1CD2F865058002E99DE /* src in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D28DD1A12F865057002E99DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D28DD1CA2F865058002E99DE /* manifest.json in Resources */,
+				D28DD1CB2F865058002E99DE /* src in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D28DD1772F865057002E99DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D28DD1B12F865057002E99DE /* ViewController.swift in Sources */,
+				D28DD17F2F865057002E99DE /* AppDelegate.swift in Sources */,
+				D28DD1812F865057002E99DE /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D28DD1892F865057002E99DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D28DD1B22F865057002E99DE /* ViewController.swift in Sources */,
+				D28DD1902F865057002E99DE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D28DD1952F865057002E99DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D28DD1B52F865057002E99DE /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D28DD19F2F865057002E99DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D28DD1B62F865057002E99DE /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D28DD19C2F865057002E99DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D28DD1982F865057002E99DE /* Closed Tabs Extension (iOS) */;
+			targetProxy = D28DD19B2F865057002E99DE /* PBXContainerItemProxy */;
+		};
+		D28DD1A62F865057002E99DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D28DD1A22F865057002E99DE /* Closed Tabs Extension (macOS) */;
+			targetProxy = D28DD1A52F865057002E99DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D28DD16E2F865057002E99DE /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D28DD16F2F865057002E99DE /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		D28DD1822F865057002E99DE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D28DD1832F865057002E99DE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D28DD1852F865057002E99DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D28DD1862F865057002E99DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D28DD1912F865057002E99DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D28DD1922F865057002E99DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D28DD1B72F865057002E99DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D28DD1B82F865057002E99DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		D28DD1BA2F865057002E99DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Closed Tabs Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Closed-Tabs.Extension";
+				PRODUCT_NAME = "Closed Tabs Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D28DD1BB2F865057002E99DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Closed Tabs Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Closed-Tabs.Extension";
+				PRODUCT_NAME = "Closed Tabs Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D28DD1BE2F865057002E99DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Closed Tabs";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Closed-Tabs";
+				PRODUCT_NAME = "Closed Tabs";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D28DD1BF2F865057002E99DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Closed Tabs";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Closed-Tabs";
+				PRODUCT_NAME = "Closed Tabs";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D28DD1C12F865057002E99DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y4LK525PYN;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Closed Tabs Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Closed-Tabs.Extension";
+				PRODUCT_NAME = "Closed Tabs Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D28DD1C22F865057002E99DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y4LK525PYN;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Closed Tabs Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Closed-Tabs.Extension";
+				PRODUCT_NAME = "Closed Tabs Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D28DD1C52F865057002E99DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y4LK525PYN;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Closed Tabs";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Closed-Tabs";
+				PRODUCT_NAME = "Closed Tabs";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D28DD1C62F865057002E99DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y4LK525PYN;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Closed Tabs";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Closed-Tabs";
+				PRODUCT_NAME = "Closed Tabs";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D28DD16B2F865057002E99DE /* Build configuration list for PBXProject "Closed Tabs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D28DD1B72F865057002E99DE /* Debug */,
+				D28DD1B82F865057002E99DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D28DD1B92F865057002E99DE /* Build configuration list for PBXNativeTarget "Closed Tabs Extension (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D28DD1BA2F865057002E99DE /* Debug */,
+				D28DD1BB2F865057002E99DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D28DD1BD2F865057002E99DE /* Build configuration list for PBXNativeTarget "Closed Tabs (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D28DD1BE2F865057002E99DE /* Debug */,
+				D28DD1BF2F865057002E99DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D28DD1C02F865057002E99DE /* Build configuration list for PBXNativeTarget "Closed Tabs Extension (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D28DD1C12F865057002E99DE /* Debug */,
+				D28DD1C22F865057002E99DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D28DD1C42F865057002E99DE /* Build configuration list for PBXNativeTarget "Closed Tabs (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D28DD1C52F865057002E99DE /* Debug */,
+				D28DD1C62F865057002E99DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D28DD1682F865057002E99DE /* Project object */;
+}

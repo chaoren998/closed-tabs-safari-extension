@@ -3,9 +3,20 @@
   "name": "Closed Tabs",
   "version": "0.1.0",
   "description": "Reopen tabs from an extension-managed recently closed list.",
+  "icons": {
+    "48": "src/icons/toolbar-48.png",
+    "96": "src/icons/toolbar-96.png",
+    "128": "src/icons/app-128.png"
+  },
   "permissions": ["tabs", "storage"],
   "browser_action": {
-    "default_title": "Closed Tabs",
+    "default_icon": {
+      "16": "src/icons/toolbar-16.png",
+      "19": "src/icons/toolbar-19.png",
+      "32": "src/icons/toolbar-32.png",
+      "38": "src/icons/toolbar-38.png"
+    },
+    "default_title": "最近关闭",
     "default_popup": "src/popup/popup.html"
   },
   "background": {

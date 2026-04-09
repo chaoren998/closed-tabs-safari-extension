@@ -74,6 +74,7 @@ export const createClosedTabsController = ({
   createId = defaultCreateId,
 }) => {
   const snapshots = new Map();
+  let storageMutationQueue = Promise.resolve();
 
   const upsertTabSnapshot = (tab) => {
     const tabId = tab?.id;
@@ -104,13 +105,24 @@ export const createClosedTabsController = ({
     }
   };
 
-  const listClosedTabs = async () => {
+  const readClosedTabs = async () => {
     const stored = await browserApi.storage.local.get(STORAGE_KEY);
     return sanitizeClosedTabRecords(stored[STORAGE_KEY]);
   };
 
+  const listClosedTabs = async () => {
+    await storageMutationQueue.catch(() => {});
+    return readClosedTabs();
+  };
+
   const writeClosedTabs = async (records) => {
     await browserApi.storage.local.set({ [STORAGE_KEY]: records });
+  };
+
+  const runStorageMutation = async (operation) => {
+    const task = storageMutationQueue.then(async () => operation(await readClosedTabs()));
+    storageMutationQueue = task.catch(() => {});
+    return task;
   };
 
   const recordClosedTab = async (tabId) => {
@@ -121,29 +133,32 @@ export const createClosedTabsController = ({
       return;
     }
 
-    const nextRecord = {
-      id: createId(),
-      sourceTabId: snapshot.tabId,
-      sourceWindowId: snapshot.windowId,
-      url: snapshot.url,
-      title: snapshot.title,
-      favIconUrl: snapshot.favIconUrl,
-      closedAt: now(),
-    };
-    const records = await listClosedTabs();
-    await writeClosedTabs(insertClosedTabRecord(records, nextRecord));
+    await runStorageMutation(async (records) => {
+      const nextRecord = {
+        id: createId(),
+        sourceTabId: snapshot.tabId,
+        sourceWindowId: snapshot.windowId,
+        url: snapshot.url,
+        title: snapshot.title,
+        favIconUrl: snapshot.favIconUrl,
+        closedAt: now(),
+      };
+
+      await writeClosedTabs(insertClosedTabRecord(records, nextRecord));
+    });
   };
 
   const reopenClosedTab = async (recordId) => {
-    const records = await listClosedTabs();
-    const record = records.find((item) => item.id === recordId);
+    await runStorageMutation(async (records) => {
+      const record = records.find((item) => item.id === recordId);
 
-    if (!record) {
-      throw new Error(`Closed-tab record not found: ${recordId}`);
-    }
+      if (!record) {
+        throw new Error(`Closed-tab record not found: ${recordId}`);
+      }
 
-    await browserApi.tabs.create({ url: record.url, active: true });
-    await writeClosedTabs(removeClosedTabRecord(records, recordId));
+      await browserApi.tabs.create({ url: record.url, active: true });
+      await writeClosedTabs(removeClosedTabRecord(records, recordId));
+    });
   };
 
   return {

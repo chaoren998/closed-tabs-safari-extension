@@ -1,3 +1,11 @@
 .superpowers/
 .DS_Store
 node_modules/
+build/
+dist/
+tmp/
+docs/superpowers/
+plugins-page-*.js
+plugins-settings-*.js
+xcuserdata/
+*.xcuserstate

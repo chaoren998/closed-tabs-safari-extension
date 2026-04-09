@@ -26,6 +26,7 @@ export const renderClosedTabsList = (records, { now = Date.now() } = {}) => {
   return records.map((record) => {
     const hostname = getHostname(record?.url);
     const title = record?.title?.trim() || hostname;
+    const metaText = record?.url?.trim() || hostname;
     const faviconUrl = typeof record?.favIconUrl === "string" ? record.favIconUrl : "";
     const relativeTime = formatRelativeTime(now, record?.closedAt ?? now);
     const faviconMarkup = faviconUrl
@@ -37,7 +38,7 @@ export const renderClosedTabsList = (records, { now = Date.now() } = {}) => {
         <span class="closed-tabs-row__icon">${faviconMarkup}</span>
         <span class="closed-tabs-row__content">
           <span class="closed-tabs-row__title">${escapeHtml(title)}</span>
-          <span class="closed-tabs-row__meta">${escapeHtml(hostname)}</span>
+          <span class="closed-tabs-row__meta">${escapeHtml(metaText)}</span>
         </span>
         <span class="closed-tabs-row__time">${escapeHtml(relativeTime)}</span>
       </button>

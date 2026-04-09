@@ -10,7 +10,7 @@ describe("renderClosedTabsList", () => {
     assert.match(markup, /No recently closed tabs yet/);
   });
 
-  test("renders compact row layout: matches data-record-id=\"row-1\", title, hostname, and 1 min ago", () => {
+  test("renders compact row layout with title, full URL, and 1 min ago", () => {
     const now = Date.UTC(2026, 3, 8, 10, 0, 0);
     const markup = renderClosedTabsList(
       [{
@@ -25,7 +25,7 @@ describe("renderClosedTabsList", () => {
 
     assert.match(markup, /data-record-id="row-1"/);
     assert.match(markup, /Example Article/);
-    assert.match(markup, /example\.com/);
+    assert.match(markup, /https:\/\/example\.com\/blog\/post/);
     assert.match(markup, /1 min ago/);
   });
 });

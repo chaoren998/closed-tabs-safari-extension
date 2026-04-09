@@ -1,12 +1,22 @@
 # Safari Closed Tabs Extension
 
-This repository contains a Safari-first web extension prototype for listing and reopening recently closed tabs.
+This repository contains a Safari-first extension for listing and reopening recently closed tabs.
+
+The project includes:
+
+- The web extension source in `extension/`
+- Automated tests in `tests/`
+- An Xcode project for Safari packaging in `Closed Tabs/Closed Tabs.xcodeproj`
 
 ## Project Layout
 
 - Extension source lives in `extension/`
 - Background entrypoint: `extension/src/background/background.html`
 - Popup entrypoint: `extension/src/popup/popup.html`
+
+## Open In Xcode
+
+Open `Closed Tabs/Closed Tabs.xcodeproj`, then select the `Closed Tabs (macOS)` scheme to run, archive, and package the Safari extension app.
 
 ## Run Tests
 
@@ -16,8 +26,6 @@ npm test
 
 ## Safari Packaging and Local Testing
 
-This repository is only the web-extension source and tests. Full Safari packaging/distribution still requires Xcode.
-
-For local Safari verification, use Apple’s guidance for temporarily installing a web extension folder in macOS Safari and point Safari to the `extension/` directory:
+Safari packaging and distribution are handled through Xcode. For quick local validation of the web extension layer, you can also temporarily install the `extension/` folder in Safari:
 
 - [Temporarily install a web extension folder in macOS Safari](https://developer.apple.com/documentation/safariservices/safari_web_extensions/running_your_safari_web_extension)

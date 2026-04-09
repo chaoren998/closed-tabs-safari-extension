@@ -255,6 +255,66 @@ describe("closed tabs controller", () => {
     assert.strictEqual(fixture.setCalls.length, 0);
   });
 
+  test("recordClosedTab preserves multiple tabs closed concurrently", async () => {
+    const fixture = createBrowserFixture();
+    let closedAt = 400;
+    let nextId = 1;
+    const controller = createClosedTabsController({
+      browserApi: fixture.browserApi,
+      now: () => {
+        closedAt += 1;
+        return closedAt;
+      },
+      createId: () => `rec-${nextId++}`,
+    });
+
+    controller.upsertTabSnapshot({
+      id: 21,
+      windowId: 1,
+      url: "https://example.com/first",
+      title: "First",
+      favIconUrl: "",
+      incognito: false,
+    });
+    controller.upsertTabSnapshot({
+      id: 22,
+      windowId: 1,
+      url: "https://example.com/second",
+      title: "Second",
+      favIconUrl: "",
+      incognito: false,
+    });
+
+    await Promise.all([
+      controller.recordClosedTab(21),
+      controller.recordClosedTab(22),
+    ]);
+
+    const finalWrite = fixture.setCalls.at(-1);
+    assert.deepStrictEqual(finalWrite, {
+      [STORAGE_KEY]: [
+        {
+          id: "rec-2",
+          sourceTabId: 22,
+          sourceWindowId: 1,
+          url: "https://example.com/second",
+          title: "Second",
+          favIconUrl: "",
+          closedAt: 402,
+        },
+        {
+          id: "rec-1",
+          sourceTabId: 21,
+          sourceWindowId: 1,
+          url: "https://example.com/first",
+          title: "First",
+          favIconUrl: "",
+          closedAt: 401,
+        },
+      ],
+    });
+  });
+
   test("recordClosedTab is a no-op when no snapshot exists", async () => {
     const fixture = createBrowserFixture();
     const controller = createClosedTabsController({
