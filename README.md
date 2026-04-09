@@ -8,6 +8,12 @@ The project includes:
 - Automated tests in `tests/`
 - An Xcode project for Safari packaging in `Closed Tabs/Closed Tabs.xcodeproj`
 
+## Download
+
+Download the latest macOS build from the [GitHub Releases page](https://github.com/chaoren998/closed-tabs-safari-extension/releases).
+
+Note: the current downloadable build is development-signed and not notarized yet, so macOS may show a Gatekeeper warning on other Macs.
+
 ## Project Layout
 
 - Extension source lives in `extension/`
